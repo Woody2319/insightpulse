@@ -6,14 +6,33 @@
     <title>InsightPulse | JADC2 Strategic Intelligence</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: #ffffff; color: #1a1a1a; }
-        nav { padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; position: sticky; top: 0; background: white; z-index: 100; }
-        .logo { font-weight: bold; letter-spacing: 2px; color: #4a7ab5; border: 2px solid #4a7ab5; padding: 5px 15px; }
+        nav { padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; position: sticky; top: 0; background: white; z-index: 1000; }
+        .logo { font-weight: bold; letter-spacing: 2px; color: #4a7ab5; border: 2px solid #4a7ab5; padding: 5px 15px; text-decoration: none; }
         
-        .hero { padding: 60px 8%; text-align: center; background: linear-gradient(to bottom, #f9f9f9, #ffffff); }
-        h1 { font-size: 3rem; font-weight: 300; margin-bottom: 10px; }
-        .operator-tag { font-family: monospace; color: #888; margin-bottom: 30px; display: block; }
+        /* Sección HERO con VIDEO de fondo */
+        .hero { 
+            position: relative; 
+            padding: 100px 8%; 
+            text-align: center; 
+            overflow: hidden; 
+            color: white; /* Texto blanco sobre el video */
+        }
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            transform: translate(-50%, -50%);
+            filter: grayscale(80%) brightness(50%); /* Estilo militar y oscuro */
+        }
+        h1 { font-size: 3.5rem; font-weight: 300; margin-bottom: 10px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+        .operator-tag { font-family: monospace; color: #ccc; margin-bottom: 30px; display: block; font-size: 0.9rem; text-shadow: 0 1px 5px rgba(0,0,0,0.5); }
         
-        .main-container { display: flex; padding: 40px 8%; gap: 50px; }
+        .main-container { display: flex; padding: 60px 8%; gap: 50px; }
         
         /* Sección Lateral de Características */
         .sidebar { flex: 1; border-right: 1px solid #eee; padding-right: 30px; }
@@ -23,59 +42,63 @@
 
         /* Contenido Principal */
         .content { flex: 3; }
-        .screenshot-container { position: relative; margin-bottom: 40px; }
-        .screenshot { width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid #ddd; }
+        .screenshot-container { position: relative; margin-bottom: 40px; margin-top: -60px; z-index: 10; } /* Efecto superpuesto */
+        .screenshot { width: 100%; border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); border: 1px solid #ddd; background: white; }
         
         .military-context { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
-        .mil-img { width: 100%; height: 200px; object-fit: cover; border-radius: 5px; filter: grayscale(50%); }
+        .mil-img { width: 100%; height: 250px; object-fit: cover; border-radius: 5px; filter: grayscale(50%); }
 
-        .about-section { margin-top: 40px; padding: 40px; background: #1a1a1a; color: white; border-radius: 10px; }
-        .about-section h2 { color: #4a7ab5; }
+        .about-section { margin-top: 50px; padding: 40px; background: #1a1a1a; color: white; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .about-section h2 { color: #4a7ab5; margin-top: 0; }
         
-        .signa-dev { border: 1px dashed #4a7ab5; padding: 20px; margin-top: 20px; border-radius: 5px; background: #f0f4f8; }
-        .status-tag { background: #4a7ab5; color: white; padding: 2px 8px; font-size: 0.7rem; border-radius: 3px; vertical-align: middle; }
+        .signa-dev { border: 2px dashed #4a7ab5; padding: 20px; margin-top: 30px; border-radius: 5px; background: #f0f4f8; }
+        .status-tag { background: #4a7ab5; color: white; padding: 2px 8px; font-size: 0.7rem; border-radius: 3px; vertical-align: middle; margin-left: 10px; font-weight: bold;}
     </style>
 </head>
 <body>
     <nav>
-        <div class="logo">INSIGHTPULSE</div>
-        <div style="font-size: 0.8rem; font-weight: bold;">JADC2 COMPLIANT SYSTEM</div>
+        <a href="#" class="logo">INSIGHTPULSE</a>
+        <div style="font-size: 0.8rem; font-weight: bold; font-family: monospace;">JADC2 COMPLIANT SYSTEM</div>
     </nav>
 
     <section class="hero">
+        <video autoplay loop muted playsinline class="hero-video">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-data-stream-on-a-digital-screen-22687-large.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
         <span class="operator-tag">AUTHORIZED OPERATOR: C. ZURITA / AD-01 | STATION: MOBILE COMMAND UNIT - ALPHA</span>
-        <h1>Intelligence for Decision, Not Just Information.</h1>
-        <p>Eliminating cognitive bias and <i>Maskirovka</i> through Triadic Deliberation.</p>
+        <h1>Strategic Intelligence for Decision, Not Just Information.</h1>
+        <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; text-shadow: 0 1px 5px rgba(0,0,0,0.5);">Eliminating cognitive bias and <i>Maskirovka</i> through Triadic Deliberation. Validated OSINT data for the modern commander.</p>
     </section>
 
     <div class="main-container">
         <aside class="sidebar">
             <div class="feature-item">
                 <h4>Triadic Engine</h4>
-                <p>Simultaneous assessment by Analyst, Challenger, and Synthesizer models.</p>
+                <p>Simultaneous assessment by Analyst, Challenger, and Synthesizer models to validate logic.</p>
             </div>
             <div class="feature-item">
                 <h4>Maskirovka Detection</h4>
-                <p>Advanced filtering against strategic deception and disinformation.</p>
+                <p>Active filtering protocol against strategic deception and disinformation patterns (OSINT).</p>
             </div>
             <div class="feature-item">
                 <h4>Multilingual OSINT</h4>
-                <p>Real-time data retrieval and analysis in 10+ languages for allied forces.</p>
+                <p>Real-time retrieval and synthesis in 10+ languages (French, German, Danish, Spanish) for allied coalitions.</p>
             </div>
             <div class="feature-item">
                 <h4>Audit Trail</h4>
-                <p>Every briefing generates a unique Serial Number (IP-2026) for mission accountability.</p>
+                <p>Every deliberation generates an Immutable Audit Trail with unique Serial Numbers (IP-2026).</p>
             </div>
             <div class="feature-item">
-                <h4>Cross-Platform</h4>
-                <p>Optimized for Desktop, Mobile, and Encrypted Tactical Tablets.</p>
+                <h4>Secure Collaboration</h4>
+                <p>Share shared tactical briefings across mobile, tablet, and command center stations via encrypted channels.</p>
             </div>
         </aside>
 
         <main class="content">
             <div class="screenshot-container">
                 <img src="interfaz.png" alt="InsightPulse Interface" class="screenshot">
-                <p style="text-align: center; font-size: 0.8rem; color: #888;">Actual UI Interface - Simulation Environment</p>
+                <p style="text-align: center; font-size: 0.8rem; color: #888; margin-top: 10px;">Simulation Environment - Live Deliberation Interface</p>
             </div>
 
             <div class="about-section">
@@ -84,8 +107,8 @@
             </div>
 
             <div class="military-context">
-                <img src="https://images.unsplash.com/photo-1508101443090-ddff9a515324?q=80&w=500" class="mil-img" alt="Tactical Ops">
-                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=500" class="mil-img" alt="Cyber Security">
+                <img src="https://images.unsplash.com/photo-1579412692966-231a47738b81?q=80&w=600" class="mil-img" alt="Tactical Ops">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600" class="mil-img" alt="Cyber Security">
             </div>
 
             <div class="signa-dev">
@@ -95,8 +118,8 @@
         </main>
     </div>
 
-    <footer style="text-align: center; padding: 40px; color: #999; font-size: 0.8rem; border-top: 1px solid #eee;">
-        © 2026 Cesar Zurita | Proprietary Technology | InsightPulse Systems
+    <footer style="text-align: center; padding: 40px; color: #999; font-size: 0.8rem; border-top: 1px solid #eee; margin-top: 40px;">
+        © 2026 Cesar Zurita | Proprietary Technology | JADC2 Protocol Active.
     </footer>
 </body>
 </html>
