@@ -3,51 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InsightPulse | JADC2 Intelligence</title>
+    <title>InsightPulse | JADC2 Strategic Intelligence</title>
     <style>
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; background: #fff; color: #1a1a1a; line-height: 1.6; }
-        nav { padding: 40px 10%; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: bold; letter-spacing: 2px; color: #4a7ab5; border: 1px solid #4a7ab5; padding: 5px 15px; }
-        .hero { padding: 80px 10%; text-align: center; }
-        h1 { font-size: 3.5rem; margin-bottom: 20px; font-weight: 300; }
-        .subtitle { font-size: 1.2rem; color: #666; max-width: 700px; margin: 0 auto 40px; }
-        .screenshot { width: 90%; max-width: 1000px; border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); border: 1px solid #eee; margin-top: 50px; }
-        .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding: 80px 10%; background: #f9f9f9; }
-        .feature-card { text-align: left; }
-        .feature-card h3 { color: #4a7ab5; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
-        .footer { padding: 60px 10%; text-align: center; font-size: 0.8rem; color: #999; border-top: 1px solid #eee; }
-        .btn { background: #1a1a1a; color: #fff; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: #ffffff; color: #1a1a1a; }
+        nav { padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; position: sticky; top: 0; background: white; z-index: 100; }
+        .logo { font-weight: bold; letter-spacing: 2px; color: #4a7ab5; border: 2px solid #4a7ab5; padding: 5px 15px; }
+        
+        .hero { padding: 60px 8%; text-align: center; background: linear-gradient(to bottom, #f9f9f9, #ffffff); }
+        h1 { font-size: 3rem; font-weight: 300; margin-bottom: 10px; }
+        .operator-tag { font-family: monospace; color: #888; margin-bottom: 30px; display: block; }
+        
+        .main-container { display: flex; padding: 40px 8%; gap: 50px; }
+        
+        /* Sección Lateral de Características */
+        .sidebar { flex: 1; border-right: 1px solid #eee; padding-right: 30px; }
+        .feature-item { margin-bottom: 25px; }
+        .feature-item h4 { color: #4a7ab5; margin: 0 0 5px 0; text-transform: uppercase; font-size: 0.85rem; }
+        .feature-item p { font-size: 0.9rem; color: #555; margin: 0; }
+
+        /* Contenido Principal */
+        .content { flex: 3; }
+        .screenshot-container { position: relative; margin-bottom: 40px; }
+        .screenshot { width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid #ddd; }
+        
+        .military-context { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
+        .mil-img { width: 100%; height: 200px; object-fit: cover; border-radius: 5px; filter: grayscale(50%); }
+
+        .about-section { margin-top: 40px; padding: 40px; background: #1a1a1a; color: white; border-radius: 10px; }
+        .about-section h2 { color: #4a7ab5; }
+        
+        .signa-dev { border: 1px dashed #4a7ab5; padding: 20px; margin-top: 20px; border-radius: 5px; background: #f0f4f8; }
+        .status-tag { background: #4a7ab5; color: white; padding: 2px 8px; font-size: 0.7rem; border-radius: 3px; vertical-align: middle; }
     </style>
 </head>
 <body>
     <nav>
         <div class="logo">INSIGHTPULSE</div>
-        <div>C. ZURITA / OPERATOR AD-01</div>
+        <div style="font-size: 0.8rem; font-weight: bold;">JADC2 COMPLIANT SYSTEM</div>
     </nav>
+
     <section class="hero">
-        <h1>Decision Intelligence for the Modern Commander.</h1>
-        <p class="subtitle">Eliminating cognitive bias and <i>Maskirovka</i> through Triadic Deliberation. JADC2 Compliant and SIGNA Ready.</p>
-        <a href="#" class="btn">Request Technical Briefing</a>
-        <br>
-        <!-- Aquí colocarás la captura de pantalla de tu AI Studio -->
-        <img src="tu-screenshot.png" alt="InsightPulse Interface" class="screenshot">
+        <span class="operator-tag">AUTHORIZED OPERATOR: C. ZURITA / AD-01 | STATION: MOBILE COMMAND UNIT - ALPHA</span>
+        <h1>Intelligence for Decision, Not Just Information.</h1>
+        <p>Eliminating cognitive bias and <i>Maskirovka</i> through Triadic Deliberation.</p>
     </section>
-    <section class="features">
-        <div class="feature-card">
-            <h3>Triadic Engine</h3>
-            <p>Simultaneous deliberation between Analyst, Challenger, and Synthesizer to ensure 100% logic validation.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Multilingual OSINT</h3>
-            <p>Real-time data retrieval in any language, localized for allied forces and international coalitions.</p>
-        </div>
-        <div class="feature-card">
-            <h3>SIGNA Integration</h3>
-            <p>Seamlessly stream tactical summaries to SIGNA Smart Glasses via audio or sign language translation.</p>
-        </div>
-    </section>
-    <div class="footer">
-        © 2026 InsightPulse Systems | Proprietary Information | JADC2 Protocol Active.
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <div class="feature-item">
+                <h4>Triadic Engine</h4>
+                <p>Simultaneous assessment by Analyst, Challenger, and Synthesizer models.</p>
+            </div>
+            <div class="feature-item">
+                <h4>Maskirovka Detection</h4>
+                <p>Advanced filtering against strategic deception and disinformation.</p>
+            </div>
+            <div class="feature-item">
+                <h4>Multilingual OSINT</h4>
+                <p>Real-time data retrieval and analysis in 10+ languages for allied forces.</p>
+            </div>
+            <div class="feature-item">
+                <h4>Audit Trail</h4>
+                <p>Every briefing generates a unique Serial Number (IP-2026) for mission accountability.</p>
+            </div>
+            <div class="feature-item">
+                <h4>Cross-Platform</h4>
+                <p>Optimized for Desktop, Mobile, and Encrypted Tactical Tablets.</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <div class="screenshot-container">
+                <img src="interfaz.png" alt="InsightPulse Interface" class="screenshot">
+                <p style="text-align: center; font-size: 0.8rem; color: #888;">Actual UI Interface - Simulation Environment</p>
+            </div>
+
+            <div class="about-section">
+                <h2>What is InsightPulse?</h2>
+                <p>InsightPulse is a high-level Decision Intelligence Platform designed for military commanders. It uses a proprietary three-layer logic model to process real-time information, challenge assumptions, and provide a validated strategic synthesis with a confidence score.</p>
+            </div>
+
+            <div class="military-context">
+                <img src="https://images.unsplash.com/photo-1508101443090-ddff9a515324?q=80&w=500" class="mil-img" alt="Tactical Ops">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=500" class="mil-img" alt="Cyber Security">
+            </div>
+
+            <div class="signa-dev">
+                <h4>SIGNA Smart Glasses Integration <span class="status-tag">UNDER DEVELOPMENT</span></h4>
+                <p>Current phase: Integrating real-time audio synthesis and sign language translation protocols for field-deployed units using SIGNA hardware.</p>
+            </div>
+        </main>
     </div>
+
+    <footer style="text-align: center; padding: 40px; color: #999; font-size: 0.8rem; border-top: 1px solid #eee;">
+        © 2026 Cesar Zurita | Proprietary Technology | InsightPulse Systems
+    </footer>
 </body>
 </html>
