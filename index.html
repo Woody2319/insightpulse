@@ -3,199 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InsightPulse | JADC2 Strategic Intelligence</title>
+    <title>InsightPulse | Strategic Intelligence & Corporate Resilience</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #ffffff; color: #1a1a1a; overflow-x: hidden; }
-        nav { padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; position: sticky; top: 0; background: white; z-index: 1000; }
-        .logo { font-weight: bold; letter-spacing: 2px; color: #4a7ab5; border: 2px solid #4a7ab5; padding: 5px 15px; text-decoration: none; }
+        :root { --primary: #4a7ab5; --dark: #1a1a1a; --light: #f4f7f9; }
+        body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--light); color: var(--dark); line-height: 1.6; }
+        nav { background: white; padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--primary); sticky: top; }
+        .hero { padding: 60px 8%; text-align: center; background: white; }
+        h1 { font-size: 2.5rem; letter-spacing: 4px; margin-bottom: 10px; color: var(--dark); }
+        .tagline { font-family: monospace; color: var(--primary); font-weight: bold; margin-bottom: 40px; }
         
-        /* 1. SECCIÓN HERO LIMPIA (Texto sobre fondo sólido) */
-        .hero { 
-            position: relative; 
-            padding: 80px 8% 40px 8%; 
-            text-align: center; 
-            background: radial-gradient(circle, #1a2a44 0%, #0a0f18 100%); /* Fondo Navy/Negro serio */
-            color: white; 
-        }
+        .main-container { display: flex; gap: 20px; padding: 0 8% 40px 8%; flex-wrap: wrap; }
+        .column { flex: 1; min-width: 300px; background: white; padding: 25px; border-radius: 8px; border: 1px solid #eee; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        h3 { border-bottom: 2px solid var(--primary); padding-bottom: 10px; font-size: 1.1rem; text-transform: uppercase; }
+        textarea { width: 100%; height: 120px; border: 1px solid #ccc; border-radius: 4px; padding: 10px; box-sizing: border-box; margin-top: 10px; font-family: monospace; }
+        .btn-initiate { background: var(--primary); color: white; border: none; padding: 12px 20px; width: 100%; border-radius: 4px; cursor: pointer; font-weight: bold; margin-top: 10px; text-transform: uppercase; }
         
-        .hero-content { position: relative; z-index: 10; }
-        h1 { font-size: 3rem; font-weight: 300; margin-bottom: 10px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
-        .operator-tag { font-family: monospace; color: #4a7ab5; background: rgba(0,0,0,0.4); padding: 5px 15px; margin-bottom: 20px; display: inline-block; font-size: 0.8rem; border: 1px solid #4a7ab5; border-radius: 3px; }
-        .hero-p { font-size: 1.1rem; max-width: 700px; margin: 0 auto; color: #ddd; }
+        .demo-section { padding: 40px 8%; text-align: center; background: #fdfdfd; }
+        .demo-caption { font-family: monospace; font-size: 0.8rem; color: #888; margin-top: 15px; }
 
-        /* 2. NUEVA SECCIÓN: DEMO NÍTIDA (El video sin desenfoque) */
-        .demo-section { 
-            background: #f4f7f9; 
-            padding: 40px 8%; 
-            text-align: center; 
-            border-bottom: 1px solid #eee;
-        }
-        
-        .demo-video-container { 
-            max-width: 1000px; 
-            margin: 0 auto; 
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15); 
-            border-radius: 8px; 
-            overflow: hidden; 
-            border: 1px solid #ddd;
-            background: white;
-        }
-
-        .demo-video { 
-            width: 100%; 
-            height: auto; 
-            display: block;
-            filter: none; /* ELIMINAMOS EL DESENFOQUE */
-        }
-
-        .demo-caption { font-size: 0.8rem; color: #888; margin-top: 15px; font-family: monospace; }
-
-        /* 3. SECCIÓN DE LA INTERFAZ (Las 3 Columnas compactas) */
-        .main-container { display: flex; padding: 40px 5%; gap: 20px; background: white; }
-        
-        .column { 
-            flex: 1; 
-            background: white; 
-            padding: 20px; 
-            border-radius: 8px; 
-            border: 1px solid #eee;
-            min-height: 250px; /* Mantenerlas cortas */
-            height: auto;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-        }
-
-        .column h3 { color: #4a7ab5; font-size: 0.85rem; text-transform: uppercase; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-top: 0; }
-
-        textarea { width: 100%; border: 1px solid #eee; padding: 10px; height: 120px; font-family: monospace; font-size: 0.8rem; border-radius: 4px; resize: none; margin-bottom: 10px; background: #fafafa; }
-        .btn-initiate { width: 100%; background: #4a7ab5; color: white; border: none; padding: 10px; font-weight: bold; border-radius: 4px; cursor: pointer; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
-        .btn-initiate:hover { background: #355d8d; }
-
-        .about-section { margin: 40px 5%; padding: 40px; background: #1a1a1a; color: white; border-radius: 10px; }
-        .signa-dev { border: 2px dashed #4a7ab5; padding: 25px; margin: 20px 5%; border-radius: 5px; background: #f8f9fb; }
-        footer { text-align: center; padding: 40px; color: #999; font-size: 0.8rem; border-top: 1px solid #eee; margin-top: 40px; }
+        footer { background: var(--dark); color: white; padding: 60px 8%; font-family: monospace; border-top: 4px solid var(--primary); }
+        footer a { color: var(--primary); text-decoration: none; }
     </style>
 </head>
 <body>
-    <nav>
+
+<nav>
     <a href="#" style="display: flex; align-items: center; gap: 15px; text-decoration: none;">
-        <!-- LOGO DUPLICADO EN TAMAÑO -->
         <img src="logo.png" alt="InsightPulse Logo" style="height: 60px; width: auto; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));">
-        <span style="font-weight: bold; letter-spacing: 2px; color: #4a7ab5; border: 2px solid #4a7ab5; padding: 8px 20px; font-size: 1.2rem;">INSIGHTPULSE</span>
+        <span style="font-weight: bold; letter-spacing: 2px; color: var(--primary); border: 2px solid var(--primary); padding: 8px 20px; font-size: 1.2rem;">INSIGHTPULSE</span>
     </a>
-    <div style="font-size: 0.7rem; font-weight: bold; font-family: monospace; color: #4a7ab5; text-align: right;">
-        PROTOCOL: JADC2-ALPHA<br>
+    <div style="font-size: 0.7rem; font-weight: bold; font-family: monospace; color: var(--primary); text-align: right;">
+        PROTOCOL: JADC2-ALPHA / DUAL-USE READY<br>
         <span style="color: #2ecc71;">● ENCRYPTED LINK</span>
     </div>
 </nav>
 
-    <section class="hero">
-        <div class="hero-content">
-            <span class="operator-tag">AUTHORIZED OPERATOR: C. ZURITA / AD-01</span>
-            <h1>Strategic Decision Intelligence</h1>
-            <p class="hero-p">Eliminating cognitive bias through Triadic Deliberation.</p>
-        </div>
-    </section>
+<section class="hero">
+    <h1>STRATEGIC DECISION ARCHITECTURE</h1>
+    <p class="tagline">[ NEUTRALIZING BIAS. ACCELERATING CERTAINTY. ]</p>
+</section>
 
-    <section class="demo-section">
-    <div class="demo-video-container">
-        <!-- CAMBIO DE VIDEO A IMAGEN ESTÁTICA -->
-        <img src="interfaz.png" alt="InsightPulse Interface" style="width: 100%; height: auto; display: block;">
+<div class="main-container">
+    <!-- Columna 1: Input Multimodal -->
+    <div class="column">
+        <h3>1. Directive Input</h3>
+        <div style="display: flex; gap: 10px; margin-bottom: 10px; background: #f8f9fb; padding: 10px; border-radius: 4px; border: 1px solid #eee;">
+            <button title="Attach PDF/Docs" style="background: none; border: 1px solid #ccc; border-radius: 3px; cursor: pointer; padding: 5px;">📎</button>
+            <button title="Voice/Audio Input" style="background: none; border: 1px solid #ccc; border-radius: 3px; cursor: pointer; padding: 5px;">🎤</button>
+            <button title="Visual/SAT Data" style="background: none; border: 1px solid #ccc; border-radius: 3px; cursor: pointer; padding: 5px;">📷</button>
+            <span style="font-size: 0.65rem; color: #888; align-self: center; font-family: monospace;">[MULTIMODAL READY]</span>
+        </div>
+        <textarea placeholder="Enter tactical query, upload M&A data room, or initiate voice command..."></textarea>
+        <button class="btn-initiate">Initiate Deliberation</button>
+    </div>
+
+    <!-- Columna 2: Triadic Deliberation -->
+    <div class="column">
+        <h3>2. Triadic Deliberation</h3>
+        <div style="font-size: 0.85rem; font-family: monospace;">
+            <p><strong style="color: #4a7ab5;">[ANALYST]:</strong> Processing multi-source data... patterns identified.</p>
+            <p><strong style="color: #e74c3c;">[CHALLENGER]:</strong> Stress-testing assumptions. Neutralizing cognitive bias.</p>
+            <p><strong style="color: #2ecc71;">[SYNTHESIZER]:</strong> Formulating optimized strategic path.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Sección Visual del Flujo de Trabajo -->
+<section class="demo-section">
+    <div style="background: white; border: 1px solid #eee; border-radius: 8px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin: 0 8%;">
+        <img src="flujo-trabajo.png" alt="InsightPulse Operations Flow" style="width: 100%; height: auto; border-radius: 4px; border: 1px solid #eee; display: block; margin-bottom: 15px;">
+        <div style="display: flex; justify-content: space-between; gap: 10px; font-family: monospace; font-size: 0.8rem; color: #666; text-transform: uppercase; border-top: 1px solid #eee; padding-top: 10px; text-align: left;">
+            <div style="flex: 1;">1. OSINT/Data Ingestion: Global capture & MiroFish predictive filtering.</div>
+            <div style="flex: 1; border-left: 1px solid #eee; padding-left: 10px;">2. Bias Neutralization: Core filters out deception & Maskirovka.</div>
+            <div style="flex: 1; border-left: 1px solid #eee; padding-left: 10px;">3. Tactical Synthesis: Validated decision with Confidence Score.</div>
+        </div>
     </div>
     <p class="demo-caption">[ SYSTEM ARCHITECTURE: INSIGHTPULSE INTERFACE - OPERATOR C. ZURITA ]</p>
 </section>
-<div style="padding: 0 8% 40px 8%; background: #f4f7f9; text-align: center;">
-        <div style="background: white; border: 1px solid #eee; border-radius: 8px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-            
-            <img src="flujo-trabajo.png" alt="InsightPulse Operations Flow" style="width: 100%; height: auto; border-radius: 4px; border: 1px solid #eee; display: block; margin-bottom: 15px;">
-            
-            <div style="display: flex; justify-content: space-between; gap: 10px; font-family: monospace; font-size: 0.8rem; color: #666; text-transform: uppercase; border-top: 1px solid #eee; padding-top: 10px;">
-                <div style="flex: 1;">1. OSINT Ingestion: Global satellite, maritime, and signal data capture.</div>
-                <div style="flex: 1; border-left: 1px solid #eee; padding-left: 10px;">2. Bias Neutralization: Core filters out deception and Maskirovka.</div>
-                <div style="flex: 1; border-left: 1px solid #eee; padding-left: 10px;">3. Tactical Synthesis: Delivers validated decision with Confidence Score.</div>
-            </div>
-        </div>
-    </div>
-    <div class="main-container">
-        <div class="column">
-    <h3>1. Directive Input</h3>
-    <div style="display: flex; gap: 10px; margin-bottom: 10px; background: #f8f9fb; padding: 10px; border-radius: 4px; border: 1px solid #eee;">
-        <!-- ICONOS SIMULADOS PARA MULTIMODALIDAD -->
-        <button title="Attach PDF/Docs" style="background: none; border: 1px solid #ccc; border-radius: 3px; cursor: pointer; padding: 5px;">📎</button>
-        <button title="Voice/Audio Input" style="background: none; border: 1px solid #ccc; border-radius: 3px; cursor: pointer; padding: 5px;">🎤</button>
-        <button title="Visual/SAT Data" style="background: none; border: 1px solid #ccc; border-radius: 3px; cursor: pointer; padding: 5px;">📷</button>
-        <span style="font-size: 0.65rem; color: #888; align-self: center; font-family: monospace;">[MULTIMODAL READY]</span>
-    </div>
-    <textarea placeholder="Enter strategic query or upload source..."></textarea>
-    <button class="btn-initiate">Initiate Deliberation</button>
-</div>
 
-        <div class="column">
-            <h3>2. Live Deliberation Feed</h3>
-            <div style="font-family: monospace; font-size: 0.8rem; color: #666; padding-top: 10px;">
-                [AWAITING DIRECTIVE...]<br><br>
-                <span style="color: #4a7ab5;">● System Standby</span><br>
-                <span style="color: #888;">&gt; JADC2 Layer Active</span>
-            </div>
+<!-- NUEVO APARTADO EMPRESARIAL Y DUAL-USE -->
+<section style="padding: 60px 8%; background: #ffffff; border-top: 1px solid #eee; text-align: center;">
+    <h2 style="color: #1a1a1a; letter-spacing: 2px; font-size: 1.5rem; margin-bottom: 20px;">[ DUAL-USE CAPABILITY: BEYOND THE BATTLEFIELD ]</h2>
+    <div style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: center;">
+        
+        <div style="flex: 1; min-width: 300px; padding: 25px; border: 2px dashed var(--primary); border-radius: 8px; text-align: left;">
+            <h3 style="color: var(--primary); margin-top: 0; border: none;">CORPORATE STRATEGY & M&A</h3>
+            <p style="font-size: 0.9rem; color: #555; line-height: 1.6; font-family: monospace;">
+                Neutralize bias in high-stakes acquisitions. InsightPulse audits data rooms for hidden liabilities, regulatory gaps, and tax risks with military-grade precision.
+            </p>
         </div>
 
-        <div class="column">
-            <h3>3. Recent History</h3>
-            <div style="font-size: 0.8rem; color: #888; padding-top: 10px;">
-                No recent deliberation logs found in local cache.<br><br>
-                Establish secure link to view archive.
-            </div>
+        <div style="flex: 1; min-width: 300px; padding: 25px; border: 2px dashed var(--primary); border-radius: 8px; text-align: left;">
+            <h3 style="color: var(--primary); margin-top: 0; border: none;">COMPLIANCE & GOVERNANCE</h3>
+            <p style="font-size: 0.9rem; color: #555; line-height: 1.6; font-family: monospace;">
+                Automated PLD/AML screening and legislative analysis. Ensure Corporate Governance and regulatory alignment across multi-jurisdictional frameworks.
+            </p>
+        </div>
+
+    </div>
+    <p style="margin-top: 30px; font-style: italic; color: #888; font-size: 0.8rem;">
+        "Transforming bureaucratic friction into decisive strategic momentum."
+    </p>
+</section>
+
+<footer>
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
+        <div style="flex: 1; min-width: 300px;">
+            <h4 style="color: var(--primary); margin-bottom: 20px; letter-spacing: 2px;">[ ESTABLISH ENCRYPTED COMMS ]</h4>
+            <p style="font-size: 0.85rem; line-height: 1.6; color: #bbb;">
+                Direct access for USAF Personnel, Defense Accelerators, and Strategic Partners. 
+                Redundant channels active for JADC2 mission alignment.
+            </p>
+        </div>
+
+        <div style="flex: 1; min-width: 250px;">
+            <h5 style="color: var(--primary); font-size: 0.8rem; margin-bottom: 15px;">PRIMARY CHANNELS:</h5>
+            <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+                <li style="margin-bottom: 10px;">> EMAIL PRO: <a href="mailto:cesar@insightpulse.pro">cesar@insightpulse.pro</a></li>
+                <li style="margin-bottom: 10px;">> EMAIL BACKUP (USAF): <a href="mailto:cesar.insightpulse@gmail.com">cesar.insightpulse@gmail.com</a></li>
+            </ul>
+        </div>
+
+        <div style="flex: 1; min-width: 200px;">
+            <h5 style="color: var(--primary); font-size: 0.8rem; margin-bottom: 15px;">OPERATIONAL NODE:</h5>
+            <p style="font-size: 0.9rem;">MEXICO CITY, MX<br>
+            <span style="color: #2ecc71; font-size: 0.7rem;">STATUS: OPERATIONAL [READY FOR DEPLOYMENT]</span></p>
+            <a href="https://www.linkedin.com/in/cesarzurita/" target="_blank" style="display: inline-block; margin-top: 10px; color: var(--primary); text-decoration: none; border: 1px solid var(--primary); padding: 5px 15px; font-size: 0.7rem; text-transform: uppercase;">VIEW OPERATOR PROFILE (LINKEDIN)</a>
         </div>
     </div>
-
-    <div class="about-section">
-        <h2>Operational Overview</h2>
-        <p>InsightPulse leverages advanced LLM architectures to provide commanders with a validated strategic synthesis via the Analyst, Challenger, and Synthesizer protocol. Built for JADC2 compliance.</p>
+    <div style="text-align: center; margin-top: 50px; font-size: 0.6rem; color: #444; border-top: 1px solid #333; padding-top: 20px;">
+        © 2026 INSIGHTPULSE STRATEGIC INTELLIGENCE. ALL RIGHTS RESERVED. JADC2 COMPLIANCE ARCHITECTURE V1.0
     </div>
+</footer>
 
-    <div class="signa-dev">
-        <h4>SIGNA Smart Glasses Integration <span style="background:#4a7ab5;color:white;padding:2px 8px;font-size:0.6rem;border-radius:3px;margin-left:10px;">IN DEVELOPMENT</span></h4>
-        <p>Engineering <b>Sign Language-to-Audio/Text</b> real-time translation. SIGNA hardware captures tactical hand signals and projects translated data onto the internal HUD while reproducing synthesized audio for seamless field communication [2026-03-20].</p>
-    </div>
-
-    <footer>© 2026 Cesar Zurita | MCU-ALPHA STATION</footer>
-    <!-- SECCIÓN DE CONTACTO TÁCTICO -->
-    <footer style="background: #1a1a1a; color: #fff; padding: 60px 8%; border-top: 4px solid #4a7ab5; font-family: monospace;">
-        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
-            
-            <div style="flex: 1; min-width: 300px;">
-                <h4 style="color: #4a7ab5; margin-bottom: 20px; letter-spacing: 2px;">[ ESTABLISH ENCRYPTED COMMS ]</h4>
-                <p style="font-size: 0.85rem; line-height: 1.6; color: #bbb;">
-                    Direct access for USAF Personnel, Defense Accelerators, and Strategic Partners. 
-                    Redundant channels active for JADC2 mission alignment.
-                </p>
-            </div>
-
-            <div style="flex: 1; min-width: 250px;">
-                <h5 style="color: #4a7ab5; font-size: 0.8rem; margin-bottom: 15px;">PRIMARY CHANNELS:</h5>
-                <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
-                    <li style="margin-bottom: 10px;">
-                        <span style="color: #4a7ab5;">> EMAIL PRO:</span> <a href="mailto:cesar@insightpulse.pro" style="color: #fff; text-decoration: none;">cesar@insightpulse.pro</a>
-                    </li>
-                    <li style="margin-bottom: 10px;">
-                        <span style="color: #4a7ab5;">> EMAIL BACKUP (USAF):</span> <a href="mailto:cesar.insightpulse@gmail.com" style="color: #fff; text-decoration: none;">cesar.insightpulse@gmail.com</a>
-                    </li>
-                    <li style="margin-bottom: 10px;">
-                        <span style="color: #4a7ab5;">> SIGNAL / MOBILE:</span> <span style="color: #fff;">+52 [55-40-23-10-64]</span>
-                    </li>
-                </ul>
-            </div>
-
-            <div style="flex: 1; min-width: 200px;">
-                <h5 style="color: #4a7ab5; font-size: 0.8rem; margin-bottom: 15px;">OPERATIONAL NODE:</h5>
-                <p style="font-size: 0.9rem;">MEXICO CITY, MX<br>
-                <span style="color: #2ecc71; font-size: 0.7rem;">STATUS: OPERATIONAL [READY FOR DEPLOYMENT]</span></p>
-                <a href="https://www.linkedin.com/in/cesarzurita/" target="_blank" style="display: inline-block; margin-top: 10px; color: #4a7ab5; text-decoration: none; border: 1px solid #4a7ab5; padding: 5px 15px; font-size: 0.7rem; font-family: monospace; text-transform: uppercase;">VIEW OPERATOR PROFILE (LINKEDIN)</a>
-            </div>
-
-        </div>
-        <div style="text-align: center; margin-top: 50px; font-size: 0.6rem; color: #444; border-top: 1px solid #333; padding-top: 20px;">
-            © 2026 INSIGHTPULSE STRATEGIC INTELLIGENCE. ALL RIGHTS RESERVED. JADC2 COMPLIANCE ARCHITECTURE V1.0
-        </div>
-    </footer>
 </body>
 </html>
