@@ -4,21 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>InsightPulse | Tactical Decision Intelligence</title>
+<title>InsightPulse | Tactical Decision System</title>
 
 <style>
 :root {
-    --black: #0a0a0a;
-    --white: #ffffff;
-    --gray: #888;
-    --accent: #00ff88;
+    --black:#0a0a0a;
+    --white:#ffffff;
+    --gray:#888;
+    --accent:#00ff88;
 }
 
 body {
     margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--black);
-    color: var(--white);
+    font-family:Arial, Helvetica, sans-serif;
+    background:var(--black);
+    color:var(--white);
 }
 
 /* NAV */
@@ -26,12 +26,7 @@ nav {
     display:flex;
     justify-content:space-between;
     padding:20px 8%;
-    border-bottom:1px solid #222;
-}
-
-nav span {
-    font-weight:bold;
-    letter-spacing:2px;
+    border-bottom:1px solid #111;
 }
 
 /* HERO */
@@ -48,22 +43,44 @@ nav span {
 .hero p {
     color:var(--gray);
     margin-top:20px;
-    font-size:1.1rem;
 }
 
-/* SECTIONS */
+/* DEMO IMAGE */
+.demo {
+    padding:60px 8%;
+    text-align:center;
+}
+
+.demo img {
+    width:100%;
+    max-width:1100px;
+    border:1px solid #222;
+    box-shadow:0 10px 40px rgba(0,0,0,0.6);
+}
+
+/* SIMULATION */
+.simulation {
+    padding:80px 8%;
+    border-top:1px solid #111;
+}
+
+.sim-box {
+    border:1px solid #222;
+    padding:25px;
+    margin-top:20px;
+    font-family:monospace;
+    background:#050505;
+}
+
+/* GRID */
 .section {
     padding:80px 8%;
     border-top:1px solid #111;
 }
 
-.section h2 {
-    margin-bottom:20px;
-}
-
 .grid {
     display:flex;
-    gap:40px;
+    gap:30px;
     flex-wrap:wrap;
 }
 
@@ -91,9 +108,9 @@ nav span {
 /* FOOTER */
 footer {
     padding:40px 8%;
-    border-top:1px solid #222;
-    font-size:0.8rem;
+    border-top:1px solid #111;
     color:var(--gray);
+    font-size:0.8rem;
 }
 </style>
 </head>
@@ -102,78 +119,93 @@ footer {
 
 <nav>
     <span>INSIGHTPULSE</span>
-    <span>[ SECURE NODE ACTIVE ]</span>
+    <span>[ TACTICAL NODE ACTIVE ]</span>
 </nav>
 
 <section class="hero">
     <h1>
-        AI THAT OPERATES<br>
-        WHEN SYSTEMS FAIL
+        DECISION INTELLIGENCE<br>
+        WITHOUT DEPENDENCY
     </h1>
-
     <p>
-        InsightPulse is a hybrid decision intelligence system designed for
-        environments where connectivity cannot be trusted.
+        InsightPulse delivers AI-powered decision support in environments
+        where connectivity is degraded, denied, or compromised.
     </p>
 </section>
 
-<section class="section">
-    <h2>[ THE PROBLEM ]</h2>
-    <p style="max-width:800px; color:#aaa;">
-        Modern operations depend on cloud-based intelligence.
-        In contested environments, connectivity is degraded, denied,
-        or manipulated. Decision-making collapses when systems fail.
+<!-- 🔥 TU INTERFAZ -->
+<section class="demo">
+    <p style="color:#888; font-family:monospace; margin-bottom:20px;">
+        [ LIVE SYSTEM INTERFACE — GEOINT ENABLED ]
     </p>
+
+    <img src="interfaz.png" alt="InsightPulse Interface">
+
 </section>
 
+<!-- 🔥 SIMULACIÓN -->
+<section class="simulation">
+    <h2>[ OPERATIONAL SIMULATION ]</h2>
+
+    <div class="sim-box">
+        > Scenario: Downed operator in denied territory  
+        > Connectivity: LOST  
+        > GPS: DEGRADED  
+
+        <br><br>
+
+        ANALYST:  
+        Identified water source 2.1km north (geological dataset)
+
+        <br><br>
+
+        CHALLENGER:  
+        Settlement at 4.8km flagged as hostile (historical OSINT)
+
+        <br><br>
+
+        SYNTHESIZER:  
+        Route optimized. Move north-east. Avoid civilian cluster.
+
+        <br><br>
+
+        CONFIDENCE SCORE: 87%
+    </div>
+</section>
+
+<!-- SYSTEM -->
 <section class="section">
-    <h2>[ THE SYSTEM ]</h2>
+    <h2>[ SYSTEM CORE ]</h2>
 
     <div class="grid">
         <div class="card">
-            <h3>HYBRID ARCHITECTURE</h3>
-            <p>Operates both online and fully offline.</p>
+            <h3>HYBRID AI</h3>
+            <p>Online + Offline execution.</p>
         </div>
 
         <div class="card">
-            <h3>TRIADIC AI CORE</h3>
-            <p>Analyst. Challenger. Synthesizer.</p>
+            <h3>TRIADIC ENGINE</h3>
+            <p>Analyst / Challenger / Synthesizer.</p>
         </div>
 
         <div class="card">
-            <h3>DATA INGESTION</h3>
-            <p>OSINT, GEOINT, and mission-critical datasets.</p>
+            <h3>MULTI-DATA INGESTION</h3>
+            <p>OSINT, GEOINT, mission datasets.</p>
         </div>
     </div>
 </section>
 
+<!-- OFFLINE -->
 <section class="section">
-    <h2>[ OFFLINE CAPABILITY ]</h2>
+    <h2>[ TACTICAL EDGE ]</h2>
     <p style="max-width:800px; color:#aaa;">
-        InsightPulse enables autonomous decision support at the tactical edge.
-        Pre-ingested intelligence allows operators to act without relying on
-        cloud systems, communications, or GPS.
+        Pre-ingested intelligence enables autonomous operation
+        without reliance on cloud infrastructure. Designed for
+        contested and disconnected environments.
     </p>
 </section>
 
-<section class="section">
-    <h2>[ USE CASE ]</h2>
-    <p style="max-width:800px; color:#aaa;">
-        A downed operator in a denied environment uses InsightPulse
-        to identify water sources, avoid hostile zones, and determine
-        optimal extraction routes — fully offline.
-    </p>
-</section>
-
-<section class="section">
-    <h2>[ DEPLOYMENT ]</h2>
-    <p style="max-width:800px; color:#aaa;">
-        Designed for integration into defense platforms,
-        command systems, and edge devices. Cloud-agnostic,
-        modular, and ready for Prime contractors.
-    </p>
-</section>
-
+<!-- CTA -->
 <section class="cta">
     <h2>REQUEST ACCESS</h2>
     <br>
@@ -183,8 +215,8 @@ footer {
 </section>
 
 <footer>
-    © 2026 InsightPulse | Tactical Decision Intelligence  
-    Mexico City | Operational Node Active
+    © 2026 InsightPulse | Tactical Decision System  
+    Mexico City | Node Operational
 </footer>
 
 </body>
