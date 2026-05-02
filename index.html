@@ -1,166 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InsightPulse | Strategic Intelligence & Corporate Resilience</title>
-    <style>
-        :root { --primary: #4a7ab5; --dark: #1a1a1a; --light: #f4f7f9; --accent: #00ff88; }
-        body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--light); color: var(--dark); line-height: 1.6; }
-        nav { background: white; padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--primary); position: sticky; top: 0; z-index: 1000; }
-        .hero { padding: 60px 8% 10px 8%; text-align: center; background: white; }
-        h1 { font-size: 2.5rem; letter-spacing: 4px; margin-bottom: 10px; color: var(--dark); text-transform: uppercase; }
-        .tagline { font-family: monospace; color: var(--primary); font-weight: bold; margin-bottom: 20px; }
-        
-        .demo-section { padding: 40px 0; text-align: center; background: #ffffff; border-top: 1px solid #eee; }
-        .demo-container { background: white; border: 1px solid #eee; border-radius: 8px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin: 0 auto; width: 92%; max-width: 1300px; display: inline-block; }
-        
-        .main-container { display: flex; gap: 20px; padding: 40px 8%; flex-wrap: wrap; background: var(--light); }
-        .column { flex: 1; min-width: 300px; background: white; padding: 25px; border-radius: 8px; border: 1px solid #eee; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        
-        h3 { border-bottom: 2px solid var(--primary); padding-bottom: 10px; font-size: 1.1rem; text-transform: uppercase; margin-top: 0; }
-        .expertise-section { padding: 60px 8%; background: var(--dark); color: white; border-top: 4px solid var(--primary); }
-        .tech-specs { padding: 40px 8%; background: #000; color: var(--accent); font-family: monospace; font-size: 0.85rem; }
-        .spec-box { border: 1px solid var(--accent); padding: 20px; line-height: 1.8; }
-        
-        footer { background: var(--dark); color: white; padding: 60px 8%; font-family: monospace; border-top: 4px solid var(--primary); }
-        footer a { color: var(--primary); text-decoration: none; font-weight: bold; }
-        
-        .btn-initiate { background: var(--primary); color: white; border: none; padding: 12px 20px; width: 100%; border-radius: 4px; cursor: pointer; font-weight: bold; margin-top: 10px; text-transform: uppercase; transition: 0.3s; }
-        .btn-initiate:hover { background: #355a8a; }
-        textarea { width: 100%; height: 100px; border: 1px solid #ccc; border-radius: 4px; padding: 10px; box-sizing: border-box; margin-top: 10px; font-family: monospace; resize: none; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>InsightPulse | Tactical Decision Intelligence</title>
+
+<style>
+:root {
+    --black: #0a0a0a;
+    --white: #ffffff;
+    --gray: #888;
+    --accent: #00ff88;
+}
+
+body {
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--black);
+    color: var(--white);
+}
+
+/* NAV */
+nav {
+    display:flex;
+    justify-content:space-between;
+    padding:20px 8%;
+    border-bottom:1px solid #222;
+}
+
+nav span {
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+/* HERO */
+.hero {
+    padding:100px 8%;
+    max-width:900px;
+}
+
+.hero h1 {
+    font-size:3rem;
+    line-height:1.2;
+}
+
+.hero p {
+    color:var(--gray);
+    margin-top:20px;
+    font-size:1.1rem;
+}
+
+/* SECTIONS */
+.section {
+    padding:80px 8%;
+    border-top:1px solid #111;
+}
+
+.section h2 {
+    margin-bottom:20px;
+}
+
+.grid {
+    display:flex;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.card {
+    flex:1;
+    min-width:280px;
+    border:1px solid #222;
+    padding:20px;
+}
+
+/* CTA */
+.cta {
+    text-align:center;
+    padding:80px 8%;
+}
+
+.btn {
+    background:var(--accent);
+    color:black;
+    padding:12px 25px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* FOOTER */
+footer {
+    padding:40px 8%;
+    border-top:1px solid #222;
+    font-size:0.8rem;
+    color:var(--gray);
+}
+</style>
 </head>
+
 <body>
 
 <nav>
-    <a href="#" style="display: flex; align-items: center; gap: 15px; text-decoration: none;">
-        <img src="logo.png" alt="InsightPulse Logo" style="height: 60px; width: auto; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));">
-        <span style="font-weight: bold; letter-spacing: 2px; color: var(--primary); border: 2px solid var(--primary); padding: 8px 20px; font-size: 1.2rem;">INSIGHTPULSE</span>
-    </a>
-    <div style="font-size: 0.7rem; font-weight: bold; font-family: monospace; color: var(--primary); text-align: right;">
-        PROTOCOL: JADC2-ALPHA / MODULAR COMPONENT READY<br>
-        <span style="color: #2ecc71;">● ENCRYPTED LINK</span>
-    </div>
+    <span>INSIGHTPULSE</span>
+    <span>[ SECURE NODE ACTIVE ]</span>
 </nav>
 
 <section class="hero">
-    <h1>STRATEGIC DECISION ARCHITECTURE</h1>
-    <p class="tagline">[ PLUG-AND-PLAY INTELLIGENCE FOR DEFENSE PRIMES ]</p>
-</section>
+    <h1>
+        AI THAT OPERATES<br>
+        WHEN SYSTEMS FAIL
+    </h1>
 
-<section class="demo-section">
-    <div class="demo-container">
-        <p style="font-family: monospace; font-size: 0.85rem; color: #4a7ab5; margin-bottom: 15px; text-transform: uppercase; font-weight: bold; letter-spacing: 1px;">
-            [ PRIMARY OPERATIONAL INTERFACE: GEOINT ENABLED ]
-        </p>
-        <img src="interfaz.png" alt="InsightPulse Interface" style="width: 100%; height: auto; border-radius: 4px; border: 1px solid #eee; display: block; margin: 0 auto 45px auto; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-
-        <div style="text-align: left; padding: 30px; background: #fcfcfc; border-radius: 8px; margin: 0 auto 45px auto; border: 1px solid #f0f0f0; width: 85%; max-width: 1000px;">
-            <h3 style="color: #1a1a1a; border-bottom: 2px solid #4a7ab5; padding-bottom: 10px; font-size: 1.25rem;">INTEGRATION CAPABILITY</h3>
-            <p style="font-size: 1rem; color: #333; line-height: 1.6;">
-                InsightPulse is a **Strategic Decision Engine** engineered for high-stakes environments. We provide a modular "Intelligence Core" designed to be embedded into Tier-1 Defense Primes' Command & Control platforms, neutralizing cognitive bias and information fog at the tactical edge.
-            </p>
-        </div>
-    </div>
-</section>
-
-<section style="padding: 60px 8%; background: #f8f9fb; border-top: 1px solid #eee;">
-    <div style="display: flex; gap: 30px; flex-wrap: wrap;">
-        <div style="flex: 1; min-width: 300px;">
-            <h3 style="color: #1a1a1a;">🛡️ SECURITY & COMPLIANCE</h3>
-            <ul style="list-style: none; padding: 0; font-family: monospace; font-size: 0.9rem;">
-                <li style="margin-bottom: 10px;"><strong>[ROADMAP]:</strong> ITAR & EAR Compliance Readiness.</li>
-                <li style="margin-bottom: 10px;"><strong>[ARCH]:</strong> Zero-Trust Verification Nodes.</li>
-                <li style="margin-bottom: 10px;"><strong>[DATA]:</strong> AES-256 Encrypted Tactical Data at Rest.</li>
-            </ul>
-        </div>
-        <div style="flex: 1; min-width: 300px;">
-            <h3 style="color: #1a1a1a;">👤 HUMAN-IN-THE-LOOP (HITL)</h3>
-            <p style="font-size: 0.9rem; color: #555;">
-                InsightPulse does not replace the commander; it empowers them. Every output includes a 
-                <strong>Confidence Score</strong> and a transparent audit trail of the Triadic Deliberation, 
-                ensuring that the final decision remains firmly in human hands.
-            </p>
-        </div>
-    </div>
-</section>
-
-<section style="padding: 60px 8%; background: #ffffff; border-top: 1px solid #eee;">
-    <h2 style="text-align: center; letter-spacing: 2px; text-transform: uppercase;">[ OPERATIONAL DOMAINS ]</h2>
-    <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 40px;">
-        <div style="flex: 1; min-width: 300px; padding: 25px; border: 1px solid #ddd; border-left: 5px solid #4a7ab5; background: #fff;">
-            <h4 style="margin-top: 0; color: #4a7ab5;">ENERGY & INFRASTRUCTURE</h4>
-            <p style="font-size: 0.85rem; color: #666; line-height: 1.6;">
-                <strong>Scenario:</strong> Offshore asset protection and logistics. 
-                InsightPulse monitors regulatory shifts and physical threats to pipelines, 
-                delivering a real-time risk map for infrastructure managers based on deep domain experience.
-            </p>
-        </div>
-        <div style="flex: 1; min-width: 300px; padding: 25px; border: 1px solid #ddd; border-left: 5px solid #e74c3c; background: #fff;">
-            <h4 style="margin-top: 0; color: #e74c3c;">DEFENSE & TACTICAL EDGE</h4>
-            <p style="font-size: 0.85rem; color: #666; line-height: 1.6;">
-                <strong>Scenario:</strong> Personnel Recovery (PR) and Evasion. 
-                Provides downed operators with autonomous (offline) survival intelligence, 
-                GEOINT-based hydration sourcing, and real-time safe-route synthesis in denied environments.
-            </p>
-        </div>
-    </div>
-</section>
-
-<section class="expertise-section">
-    <h2 style="color: var(--primary); letter-spacing: 2px; text-transform: uppercase;">[ ARCHITECT PROFILE & DOMAIN EXPERTISE ]</h2>
-    <p style="font-family: monospace; font-size: 1rem; line-height: 1.8; color: #ccc;">
-        Built on a foundation of **18+ years of Legal Strategy** and **6 years specialized in Oil & Gas Critical Infrastructure**. 
-        This deep domain knowledge ensures that our Triadic Deliberation Core adheres to the highest standards of regulatory compliance and operational security required by global Primes.
+    <p>
+        InsightPulse is a hybrid decision intelligence system designed for
+        environments where connectivity cannot be trusted.
     </p>
 </section>
 
-<section class="tech-specs">
-    <div class="spec-box">
-        <p>> CORE_ENGINE: Triadic Deliberation Logic V1.1</p>
-        <p>> LLM_STACK: Vertex AI / Optimized Small Language Models (SLM) for Edge</p>
-        <p>> INGESTION: Multi-modal (OSINT, GEOINT, Encrypted Tactical Manuals)</p>
-        <p>> DEPLOYMENT: Dockerized / Cloud-Agnostic / Offline Portable Ready</p>
-        <p>> LATENCY: Sub-second synthesis in tactical mode</p>
+<section class="section">
+    <h2>[ THE PROBLEM ]</h2>
+    <p style="max-width:800px; color:#aaa;">
+        Modern operations depend on cloud-based intelligence.
+        In contested environments, connectivity is degraded, denied,
+        or manipulated. Decision-making collapses when systems fail.
+    </p>
+</section>
+
+<section class="section">
+    <h2>[ THE SYSTEM ]</h2>
+
+    <div class="grid">
+        <div class="card">
+            <h3>HYBRID ARCHITECTURE</h3>
+            <p>Operates both online and fully offline.</p>
+        </div>
+
+        <div class="card">
+            <h3>TRIADIC AI CORE</h3>
+            <p>Analyst. Challenger. Synthesizer.</p>
+        </div>
+
+        <div class="card">
+            <h3>DATA INGESTION</h3>
+            <p>OSINT, GEOINT, and mission-critical datasets.</p>
+        </div>
     </div>
 </section>
 
-<div class="main-container">
-    <div class="column">
-        <h3>1. Directive Input</h3>
-        <textarea placeholder="Enter tactical query or initiate integration inquiry..."></textarea>
-        <button class="btn-initiate">Initiate Integration Inquiry</button>
-    </div>
-    <div class="column">
-        <h3>2. Triadic Deliberation Core</h3>
-        <div style="font-size: 0.85rem; font-family: monospace;">
-            <p><strong style="color: #4a7ab5;">[ANALYST]:</strong> Fusing multi-source signals and asset data.</p>
-            <p><strong style="color: #e74c3c;">[CHALLENGER]:</strong> Stress-testing assumptions & bias neutralization.</p>
-            <p><strong style="color: #2ecc71;">[SYNTHESIZER]:</strong> Formulating validated strategic path with Confidence Score.</p>
-        </div>
-    </div>
-</div>
+<section class="section">
+    <h2>[ OFFLINE CAPABILITY ]</h2>
+    <p style="max-width:800px; color:#aaa;">
+        InsightPulse enables autonomous decision support at the tactical edge.
+        Pre-ingested intelligence allows operators to act without relying on
+        cloud systems, communications, or GPS.
+    </p>
+</section>
+
+<section class="section">
+    <h2>[ USE CASE ]</h2>
+    <p style="max-width:800px; color:#aaa;">
+        A downed operator in a denied environment uses InsightPulse
+        to identify water sources, avoid hostile zones, and determine
+        optimal extraction routes — fully offline.
+    </p>
+</section>
+
+<section class="section">
+    <h2>[ DEPLOYMENT ]</h2>
+    <p style="max-width:800px; color:#aaa;">
+        Designed for integration into defense platforms,
+        command systems, and edge devices. Cloud-agnostic,
+        modular, and ready for Prime contractors.
+    </p>
+</section>
+
+<section class="cta">
+    <h2>REQUEST ACCESS</h2>
+    <br>
+    <a href="mailto:cesar@insightpulse.pro" class="btn">
+        CONTACT
+    </a>
+</section>
 
 <footer>
-    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
-        <div style="flex: 1; min-width: 300px;">
-            <h4 style="color: var(--primary); margin-bottom: 20px; letter-spacing: 2px;">[ ESTABLISH ENCRYPTED COMMS ]</h4>
-            <p style="font-size: 0.85rem; line-height: 1.6; color: #bbb;">
-                Direct channel for Defense Primes, Systems Integrators, and Infrastructure Partners.
-            </p>
-        </div>
-        <div style="flex: 1; min-width: 250px;">
-            <h5 style="color: var(--primary); font-size: 0.8rem; margin-bottom: 15px;">PRIMARY CHANNELS:</h5>
-            <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
-                <li style="margin-bottom: 10px;">> EMAIL: <a href="mailto:cesar@insightpulse.pro">cesar@insightpulse.pro</a></li>
-                <li style="margin-bottom: 10px;">> LINKEDIN: <a href="https://www.linkedin.com/in/cesarzurita/" target="_blank">OPERATOR PROFILE</a></li>
-            </ul>
-        </div>
-    </div>
-    <div style="text-align: center; margin-top: 50px; font-size: 0.6rem; color: #444; border-top: 1px solid #333; padding-top: 20px;">
-        © 2026 INSIGHTPULSE STRATEGIC INTELLIGENCE. ALL RIGHTS RESERVED. JADC2 COMPLIANCE V1.0
-    </div>
+    © 2026 InsightPulse | Tactical Decision Intelligence  
+    Mexico City | Operational Node Active
 </footer>
 
 </body>
