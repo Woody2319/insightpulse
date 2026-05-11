@@ -240,4 +240,330 @@
         .architecture{
             background:linear-gradient(180deg,#09111b 0%,#05080d 100%);
             border-top:1px solid rgba(0,255,136,0.08);
-            border-bottom:1px solid
+            border-bottom:1px solid rgba(0,255,136,0.08);
+        }
+
+        .triad{
+            display:flex;
+            flex-wrap:wrap;
+            gap:24px;
+            margin-top:40px;
+        }
+
+        .triad-box{
+            flex:1;
+            min-width:260px;
+            padding:28px;
+            border-radius:18px;
+            background:rgba(255,255,255,0.03);
+            border:1px solid rgba(255,255,255,0.06);
+        }
+
+        .triad-box h4{
+            margin-bottom:16px;
+            letter-spacing:1px;
+        }
+
+        .analyst{
+            color:#66b3ff;
+        }
+
+        .challenger{
+            color:#ff6666;
+        }
+
+        .synth{
+            color:#00ff88;
+        }
+
+        .specs{
+            background:black;
+            border:1px solid rgba(0,255,136,0.18);
+            border-radius:18px;
+            padding:35px;
+            font-family:monospace;
+            color:var(--primary);
+            line-height:2;
+        }
+
+        footer{
+            padding:70px 7%;
+            border-top:1px solid rgba(0,255,136,0.08);
+            background:#04070b;
+        }
+
+        .footer-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:40px;
+        }
+
+        footer h4{
+            color:var(--primary);
+            margin-bottom:20px;
+            letter-spacing:2px;
+        }
+
+        footer p,
+        footer li,
+        footer a{
+            color:var(--muted);
+            text-decoration:none;
+            list-style:none;
+            line-height:2;
+        }
+
+        footer a:hover{
+            color:var(--primary);
+        }
+
+        .footer-bottom{
+            margin-top:50px;
+            padding-top:20px;
+            border-top:1px solid rgba(255,255,255,0.06);
+            text-align:center;
+            color:#566273;
+            font-size:.75rem;
+        }
+
+        @media(max-width:768px){
+
+            .hero h1{
+                font-size:2.5rem;
+            }
+
+            .hero{
+                padding-top:70px;
+            }
+
+            nav{
+                flex-direction:column;
+                gap:18px;
+            }
+
+            .status-box{
+                text-align:center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+
+    <a href="#" class="logo-wrap">
+        <img src="logo.png" alt="InsightPulse Logo">
+        <div class="logo-text">INSIGHTPULSE</div>
+    </a>
+
+    <div class="status-box">
+        PROTOCOL: JADC2-EDGE / DUAL-MODE READY<br>
+        <span class="online-dot">● ONLINE + OFFLINE OPERATIONAL</span>
+    </div>
+
+</nav>
+
+<section class="hero">
+
+    <h1>Strategic Decision Architecture</h1>
+
+    <p class="hero-sub">
+        [ AI-POWERED OPERATIONAL INTELLIGENCE FOR DISCONNECTED AND HIGH-STAKES ENVIRONMENTS ]
+    </p>
+
+    <p class="hero-desc">
+        InsightPulse is an AI-powered intelligence system designed to unify internal and external information across online and offline environments. 
+        The platform enables operators to query survival manuals, tactical procedures, geospatial intelligence, operational documents, audio, video, 
+        and OSINT through natural language or voice interaction — transforming fragmented data into actionable intelligence in seconds.
+        <br><br>
+        Built for defense, emergency response, infrastructure resilience, and tactical field operations.
+    </p>
+
+    <div class="hero-buttons">
+        <a href="#demo" class="btn-primary">WATCH DEMO</a>
+        <a href="https://www.linkedin.com/in/cesarzurita/" target="_blank" class="btn-secondary">CONTACT</a>
+    </div>
+
+</section>
+
+<section class="section" id="demo">
+
+    <h2 class="section-title">
+        Primary Operational Interface
+    </h2>
+
+    <p class="section-sub">
+        Portable AI decision-support architecture capable of operating in both secure connected environments and disconnected tactical scenarios.
+    </p>
+
+    <img src="interfaz.png" alt="InsightPulse Interface" class="interface-image">
+
+    <p class="video-label">
+        [ OPERATIONAL DEMO — ONLINE / OFFLINE AI DECISION SUPPORT ]
+    </p>
+
+    <div class="video-container">
+
+        <iframe
+            src="https://www.youtube.com/embed/G3jecsJE-uU"
+            title="InsightPulse Tactical Demo"
+            allowfullscreen
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+        </iframe>
+
+    </div>
+
+</section>
+
+<section class="section architecture">
+
+    <h2 class="section-title">
+        Triadic AI Architecture
+    </h2>
+
+    <p class="section-sub">
+        InsightPulse leverages a multi-agent AI structure engineered to reduce bias, challenge assumptions, and synthesize operationally useful recommendations.
+    </p>
+
+    <div class="triad">
+
+        <div class="triad-box">
+            <h4 class="analyst">[ ANALYST ]</h4>
+
+            <p>
+                Aggregates and processes multimodal information including GEOINT, OSINT, survival manuals,
+                field documentation, PDFs, audio transcripts, and operational datasets.
+            </p>
+        </div>
+
+        <div class="triad-box">
+            <h4 class="challenger">[ CHALLENGER ]</h4>
+
+            <p>
+                Stress-tests assumptions, identifies weaknesses, and performs adversarial validation to reduce cognitive bias
+                and operational blind spots.
+            </p>
+        </div>
+
+        <div class="triad-box">
+            <h4 class="synth">[ SYNTHESIZER ]</h4>
+
+            <p>
+                Produces actionable recommendations, route synthesis, risk assessment,
+                and confidence-scored operational outputs for human decision-makers.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <h2 class="section-title">
+        Operational Applications
+    </h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Defense & Tactical Operations</h3>
+
+            <p>
+                AI-assisted survival intelligence, denied-environment navigation, extraction planning,
+                tactical decision support, and autonomous offline field assistance.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Disaster Response</h3>
+
+            <p>
+                Portable AI knowledge systems for earthquakes, hurricanes, wildfires,
+                humanitarian crises, and collapsed communications infrastructure.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Critical Infrastructure</h3>
+
+            <p>
+                Operational intelligence for energy, logistics, industrial security,
+                offshore assets, and infrastructure resilience.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <h2 class="section-title">
+        Technical Architecture
+    </h2>
+
+    <div class="specs">
+
+        > CORE_ENGINE: Triadic Deliberation Architecture V1.1<br>
+        > DEPLOYMENT: Cloud / Edge / Offline Portable Ready<br>
+        > INPUTS: PDF, DOCX, XLSX, Audio, GEOINT, OSINT, Video<br>
+        > AI_STACK: Multi-Agent LLM Architecture<br>
+        > INTERACTION: Natural Language + Voice Query Support<br>
+        > OPERATIONAL_MODE: Online + Disconnected Environments<br>
+        > PLATFORM: Laptop / Tactical Portable Devices<br>
+        > HUMAN_AUTHORITY: Human-in-the-loop Decision Framework
+
+    </div>
+
+</section>
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <h4>[ ENCRYPTED COMMS ]</h4>
+
+            <p>
+                Direct contact channel for defense accelerators, strategic partners,
+                emergency response organizations, and operational validation opportunities.
+            </p>
+
+        </div>
+
+        <div>
+
+            <h4>[ CONTACT ]</h4>
+
+            <ul>
+                <li>Email: <a href="mailto:cesar@insightpulse.pro">cesar@insightpulse.pro</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/cesarzurita/" target="_blank">Operator Profile</a></li>
+            </ul>
+
+        </div>
+
+        <div>
+
+            <h4>[ STATUS ]</h4>
+
+            <p>
+                MVP Stage<br>
+                Tactical Demo Operational<br>
+                Seeking Pilot Validation & Strategic Partnerships
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 INSIGHTPULSE STRATEGIC INTELLIGENCE — ALL RIGHTS RESERVED
+    </div>
+
+</footer>
+
+</body>
+</html>
