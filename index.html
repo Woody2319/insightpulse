@@ -1,229 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>InsightPulse | Tactical Decision Intelligence</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsightPulse | Strategic Decision Architecture</title>
 
-<style>
-:root {
-    --bg: #0a0f1c;
-    --primary: #00ff88;
-    --secondary: #4a7ab5;
-    --text: #e6edf3;
-    --muted: #8b949e;
-}
+    <style>
+        :root{
+            --bg:#06090f;
+            --panel:#0f1722;
+            --panel2:#111c2b;
+            --primary:#00ff88;
+            --secondary:#4a7ab5;
+            --text:#e8edf5;
+            --muted:#8ea0b8;
+            --danger:#ff4d4d;
+        }
 
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: radial-gradient(circle at top, #111827, #020617);
-    color: var(--text);
-}
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
 
-/* NAV */
-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 8%;
-    border-bottom: 1px solid #1f2937;
-}
+        body{
+            background: radial-gradient(circle at top, #0d1623 0%, #06090f 55%);
+            color:var(--text);
+            font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+            line-height:1.6;
+        }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+        nav{
+            position:sticky;
+            top:0;
+            z-index:1000;
 
-.logo img {
-    height: 40px;
-}
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
 
-.badge {
-    color: var(--primary);
-    font-family: monospace;
-    font-size: 12px;
-}
+            padding:18px 7%;
 
-/* HERO */
-.hero {
-    text-align: center;
-    padding: 100px 8% 60px;
-}
+            background:rgba(5,10,18,0.92);
+            backdrop-filter:blur(10px);
 
-.hero h1 {
-    font-size: 3rem;
-    letter-spacing: 3px;
-}
+            border-bottom:1px solid rgba(0,255,136,0.12);
+        }
 
-.hero p {
-    color: var(--muted);
-    margin-top: 20px;
-}
+        .logo-wrap{
+            display:flex;
+            align-items:center;
+            gap:16px;
+            text-decoration:none;
+        }
 
-.cta {
-    margin-top: 30px;
-}
+        .logo-wrap img{
+            height:60px;
+            width:auto;
+        }
 
-.cta a {
-    text-decoration: none;
-}
+        .logo-text{
+            color:var(--primary);
+            border:1px solid rgba(0,255,136,0.35);
+            padding:10px 18px;
+            border-radius:10px;
+            letter-spacing:2px;
+            font-weight:700;
+            font-size:1rem;
+            background:rgba(0,255,136,0.04);
+        }
 
-.cta button {
-    background: var(--primary);
-    border: none;
-    padding: 14px 24px;
-    margin: 10px;
-    cursor: pointer;
-    font-weight: bold;
-}
+        .status-box{
+            text-align:right;
+            font-family:monospace;
+            font-size:.75rem;
+            color:var(--muted);
+            line-height:1.6;
+        }
 
-/* VIDEO */
-.video {
-    padding: 40px 8%;
-    text-align: center;
-}
+        .online-dot{
+            color:var(--primary);
+        }
 
-video {
-    width: 90%;
-    max-width: 900px;
-    border-radius: 10px;
-}
+        .hero{
+            padding:90px 7% 40px;
+            text-align:center;
+        }
 
-/* SECTION */
-.section {
-    padding: 80px 8%;
-}
+        .hero h1{
+            font-size:4rem;
+            line-height:1.1;
+            letter-spacing:4px;
+            margin-bottom:24px;
+            text-transform:uppercase;
+        }
 
-.grid {
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-}
+        .hero-sub{
+            color:var(--primary);
+            font-family:monospace;
+            letter-spacing:2px;
+            font-size:1rem;
+            margin-bottom:30px;
+        }
 
-.card {
-    flex: 1;
-    min-width: 280px;
-    background: #111827;
-    padding: 25px;
-    border-left: 3px solid var(--primary);
-}
+        .hero-desc{
+            max-width:1000px;
+            margin:0 auto;
+            color:var(--muted);
+            font-size:1.08rem;
+        }
 
-/* IMAGE */
-.image {
-    text-align: center;
-    padding: 40px 8%;
-}
+        .hero-buttons{
+            margin-top:40px;
+            display:flex;
+            justify-content:center;
+            gap:20px;
+            flex-wrap:wrap;
+        }
 
-.image img {
-    width: 90%;
-    max-width: 900px;
-    border-radius: 10px;
-}
+        .btn-primary{
+            background:var(--primary);
+            color:#04110a;
+            padding:14px 28px;
+            border-radius:10px;
+            text-decoration:none;
+            font-weight:700;
+            transition:.3s;
+        }
 
-/* FOOTER */
-footer {
-    padding: 60px 8%;
-    border-top: 1px solid #1f2937;
-    font-family: monospace;
-}
-</style>
-</head>
+        .btn-primary:hover{
+            transform:translateY(-2px);
+            box-shadow:0 0 20px rgba(0,255,136,0.25);
+        }
 
-<body>
+        .btn-secondary{
+            border:1px solid rgba(255,255,255,0.15);
+            color:white;
+            padding:14px 28px;
+            border-radius:10px;
+            text-decoration:none;
+            transition:.3s;
+        }
 
-<!-- NAV -->
-<nav>
-    <div class="logo">
-        <img src="logo.png">
-        <strong>INSIGHTPULSE</strong>
-    </div>
-    <div class="badge">
-        JADC2 READY ● EDGE AI ENABLED
-    </div>
-</nav>
+        .btn-secondary:hover{
+            border-color:var(--primary);
+            color:var(--primary);
+        }
 
-<!-- HERO -->
-<section class="hero">
-    <h1>DECISION SUPERIORITY AT THE TACTICAL EDGE</h1>
-    <p>
-        InsightPulse is a multi-model intelligence system designed for denied environments.
-        Operates fully offline. Enhances human decision-making under uncertainty.
-    </p>
+        .section{
+            padding:80px 7%;
+        }
 
-    <div class="cta">
-        <a href="#demo"><button>▶️ Watch Demo</button></a>
-        <a href="https://your-demo-link.com" target="_blank">
-            <button>🚀 Launch Demo</button>
-        </a>
-    </div>
-</section>
+        .section-title{
+            font-size:2rem;
+            margin-bottom:20px;
+            text-transform:uppercase;
+            letter-spacing:2px;
+        }
 
-<!-- VIDEO -->
-<section class="video" id="demo">
-    <video controls autoplay muted loop>
-        <source src="demo.mp4" type="video/mp4">
-    </video>
-</section>
+        .section-sub{
+            color:var(--muted);
+            max-width:1000px;
+            margin-bottom:50px;
+        }
 
-<!-- INTERFACE IMAGE -->
-<section class="image">
-    <img src="interfaz.png">
-</section>
+        .interface-image{
+            width:100%;
+            border-radius:18px;
+            border:1px solid rgba(0,255,136,0.15);
+            box-shadow:0 0 45px rgba(0,255,136,0.08);
+        }
 
-<!-- CORE -->
-<section class="section">
-    <h2>[ CORE CAPABILITIES ]</h2>
+        .video-label{
+            margin-top:60px;
+            margin-bottom:18px;
 
-    <div class="grid">
-        <div class="card">
-            <h3>OFFLINE INTELLIGENCE</h3>
-            <p>Operates without connectivity. Designed for denied, degraded environments.</p>
-        </div>
+            color:var(--primary);
+            text-align:center;
+            font-family:monospace;
+            letter-spacing:2px;
+            font-size:.82rem;
+        }
 
-        <div class="card">
-            <h3>AI TRIAD</h3>
-            <p>Analyst, Challenger, Synthesizer. Structured reasoning pipeline.</p>
-        </div>
+        .video-container{
+            position:relative;
+            width:100%;
+            padding-bottom:56.25%;
+            height:0;
+            overflow:hidden;
 
-        <div class="card">
-            <h3>MULTI-SOURCE FUSION</h3>
-            <p>OSINT + internal data + pre-ingested mission intelligence.</p>
-        </div>
-    </div>
-</section>
+            border-radius:18px;
+            border:1px solid rgba(0,255,136,0.18);
 
-<!-- USE CASE -->
-<section class="section">
-    <h2>[ USE CASE: PERSONNEL RECOVERY ]</h2>
+            box-shadow:0 0 50px rgba(0,255,136,0.08);
 
-    <p>
-        A downed pilot activates InsightPulse in a denied environment. 
-        The system identifies water sources, threat zones, and optimal extraction routes — 
-        without internet connectivity.
-    </p>
-</section>
+            background:black;
+        }
 
-<!-- CTA FINAL -->
-<section class="section">
-    <h2>[ INTEGRATION READY FOR DEFENSE PRIMES ]</h2>
+        .video-container iframe{
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            border:none;
+        }
 
-    <p>
-        InsightPulse is designed as a modular intelligence layer for Command & Control systems.
-    </p>
+        .grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+            gap:28px;
+        }
 
-    <div class="cta">
-        <a href="mailto:cesar@insightpulse.pro">
-            <button>Contact</button>
-        </a>
-    </div>
-</section>
+        .card{
+            background:linear-gradient(180deg, #101826 0%, #0b111a 100%);
+            border:1px solid rgba(255,255,255,0.06);
+            border-radius:18px;
+            padding:30px;
+            transition:.3s;
+        }
 
-<!-- FOOTER -->
-<footer>
-    <p>InsightPulse © 2026</p>
-    <p>Mexico City | Operational Node Active</p>
-</footer>
+        .card:hover{
+            transform:translateY(-5px);
+            border-color:rgba(0,255,136,0.25);
+            box-shadow:0 0 35px rgba(0,255,136,0.08);
+        }
 
-</body>
-</html>
+        .card h3{
+            margin-bottom:18px;
+            color:var(--primary);
+            letter-spacing:1px;
+        }
+
+        .card p{
+            color:var(--muted);
+            font-size:.95rem;
+        }
+
+        .architecture{
+            background:linear-gradient(180deg,#09111b 0%,#05080d 100%);
+            border-top:1px solid rgba(0,255,136,0.08);
+            border-bottom:1px solid
