@@ -1,567 +1,580 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InsightPulse | Strategic Decision Architecture</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        :root{
-            --bg:#06090f;
-            --panel:#0f1722;
-            --panel2:#111c2b;
-            --primary:#00ff88;
-            --secondary:#4a7ab5;
-            --text:#e8edf5;
-            --muted:#8ea0b8;
-            --danger:#ff4d4d;
-        }
+<title>InsightPulse | Tactical AI For Disconnected Environments</title>
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
+<style>
 
-        body{
-            background: radial-gradient(circle at top, #0d1623 0%, #06090f 55%);
-            color:var(--text);
-            font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
-            line-height:1.6;
-        }
+:root{
+    --bg:#050814;
+    --card:#0d1326;
+    --primary:#4a7ab5;
+    --accent:#00ff88;
+    --text:#e8edf7;
+    --muted:#8ea3c7;
+}
 
-        nav{
-            position:sticky;
-            top:0;
-            z-index:1000;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+    overflow-x:hidden;
+}
 
-            padding:18px 7%;
+html{
+    scroll-behavior:smooth;
+}
 
-            background:rgba(5,10,18,0.92);
-            backdrop-filter:blur(10px);
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
 
-            border-bottom:1px solid rgba(0,255,136,0.12);
-        }
+    background:rgba(5,8,20,0.92);
+    backdrop-filter:blur(12px);
 
-        .logo-wrap{
-            display:flex;
-            align-items:center;
-            gap:16px;
-            text-decoration:none;
-        }
+    border-bottom:1px solid rgba(255,255,255,0.05);
 
-        .logo-wrap img{
-            height:60px;
-            width:auto;
-        }
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-        .logo-text{
-            color:var(--primary);
-            border:1px solid rgba(0,255,136,0.35);
-            padding:10px 18px;
-            border-radius:10px;
-            letter-spacing:2px;
-            font-weight:700;
-            font-size:1rem;
-            background:rgba(0,255,136,0.04);
-        }
+    padding:18px 8%;
+}
 
-        .status-box{
-            text-align:right;
-            font-family:monospace;
-            font-size:.75rem;
-            color:var(--muted);
-            line-height:1.6;
-        }
+.nav-left{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
 
-        .online-dot{
-            color:var(--primary);
-        }
+.nav-left img{
+    height:58px;
+}
 
-        .hero{
-            padding:90px 7% 40px;
-            text-align:center;
-        }
+.nav-title{
+    color:white;
+    letter-spacing:3px;
+    font-size:1rem;
+    font-weight:700;
+}
 
-        .hero h1{
-            font-size:4rem;
-            line-height:1.1;
-            letter-spacing:4px;
-            margin-bottom:24px;
-            text-transform:uppercase;
-        }
+.nav-status{
+    text-align:right;
+    font-family:monospace;
+    color:var(--muted);
+    font-size:0.75rem;
+    line-height:1.6;
+}
 
-        .hero-sub{
-            color:var(--primary);
-            font-family:monospace;
-            letter-spacing:2px;
-            font-size:1rem;
-            margin-bottom:30px;
-        }
+.hero{
+    padding:110px 8% 80px;
+    text-align:center;
 
-        .hero-desc{
-            max-width:1000px;
-            margin:0 auto;
-            color:var(--muted);
-            font-size:1.08rem;
-        }
+    background:
+    radial-gradient(circle at top,#13203d 0%,#050814 60%);
+}
 
-        .hero-buttons{
-            margin-top:40px;
-            display:flex;
-            justify-content:center;
-            gap:20px;
-            flex-wrap:wrap;
-        }
+.hero h1{
+    font-size:4rem;
+    line-height:1.1;
+    letter-spacing:4px;
+    text-transform:uppercase;
 
-        .btn-primary{
-            background:var(--primary);
-            color:#04110a;
-            padding:14px 28px;
-            border-radius:10px;
-            text-decoration:none;
-            font-weight:700;
-            transition:.3s;
-        }
+    max-width:1200px;
+    margin:auto;
 
-        .btn-primary:hover{
-            transform:translateY(-2px);
-            box-shadow:0 0 20px rgba(0,255,136,0.25);
-        }
+    color:white;
+}
 
-        .btn-secondary{
-            border:1px solid rgba(255,255,255,0.15);
-            color:white;
-            padding:14px 28px;
-            border-radius:10px;
-            text-decoration:none;
-            transition:.3s;
-        }
+.hero p{
+    margin-top:30px;
 
-        .btn-secondary:hover{
-            border-color:var(--primary);
-            color:var(--primary);
-        }
+    color:var(--muted);
 
-        .section{
-            padding:80px 7%;
-        }
+    font-size:1.2rem;
+    line-height:1.8;
 
-        .section-title{
-            font-size:2rem;
-            margin-bottom:20px;
-            text-transform:uppercase;
-            letter-spacing:2px;
-        }
+    max-width:950px;
+    margin-left:auto;
+    margin-right:auto;
+}
 
-        .section-sub{
-            color:var(--muted);
-            max-width:1000px;
-            margin-bottom:50px;
-        }
+.hero-buttons{
+    margin-top:45px;
 
-        .interface-image{
-            width:100%;
-            border-radius:18px;
-            border:1px solid rgba(0,255,136,0.15);
-            box-shadow:0 0 45px rgba(0,255,136,0.08);
-        }
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
 
-        .video-label{
-            margin-top:60px;
-            margin-bottom:18px;
+.btn-primary{
+    background:linear-gradient(135deg,#4a7ab5,#6d9fe0);
+    color:white;
 
-            color:var(--primary);
-            text-align:center;
-            font-family:monospace;
-            letter-spacing:2px;
-            font-size:.82rem;
-        }
+    padding:16px 34px;
+    border-radius:12px;
 
-        .video-container{
-            position:relative;
-            width:100%;
-            padding-bottom:56.25%;
-            height:0;
-            overflow:hidden;
+    text-decoration:none;
+    font-weight:700;
 
-            border-radius:18px;
-            border:1px solid rgba(0,255,136,0.18);
+    transition:0.3s;
+}
 
-            box-shadow:0 0 50px rgba(0,255,136,0.08);
+.btn-primary:hover{
+    transform:translateY(-2px);
+}
 
-            background:black;
-        }
+.btn-secondary{
+    border:1px solid rgba(255,255,255,0.15);
 
-        .video-container iframe{
-            position:absolute;
-            top:0;
-            left:0;
-            width:100%;
-            height:100%;
-            border:none;
-        }
+    color:white;
 
-        .grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-            gap:28px;
-        }
+    padding:16px 34px;
+    border-radius:12px;
 
-        .card{
-            background:linear-gradient(180deg, #101826 0%, #0b111a 100%);
-            border:1px solid rgba(255,255,255,0.06);
-            border-radius:18px;
-            padding:30px;
-            transition:.3s;
-        }
+    text-decoration:none;
 
-        .card:hover{
-            transform:translateY(-5px);
-            border-color:rgba(0,255,136,0.25);
-            box-shadow:0 0 35px rgba(0,255,136,0.08);
-        }
+    transition:0.3s;
+}
 
-        .card h3{
-            margin-bottom:18px;
-            color:var(--primary);
-            letter-spacing:1px;
-        }
+.btn-secondary:hover{
+    background:rgba(255,255,255,0.04);
+}
 
-        .card p{
-            color:var(--muted);
-            font-size:.95rem;
-        }
+.section{
+    padding:90px 8%;
+}
 
-        .architecture{
-            background:linear-gradient(180deg,#09111b 0%,#05080d 100%);
-            border-top:1px solid rgba(0,255,136,0.08);
-            border-bottom:1px solid rgba(0,255,136,0.08);
-        }
+.section-title{
+    text-align:center;
+    margin-bottom:20px;
 
-        .triad{
-            display:flex;
-            flex-wrap:wrap;
-            gap:24px;
-            margin-top:40px;
-        }
+    font-size:2.3rem;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
 
-        .triad-box{
-            flex:1;
-            min-width:260px;
-            padding:28px;
-            border-radius:18px;
-            background:rgba(255,255,255,0.03);
-            border:1px solid rgba(255,255,255,0.06);
-        }
+.section-subtitle{
+    text-align:center;
+    color:var(--muted);
 
-        .triad-box h4{
-            margin-bottom:16px;
-            letter-spacing:1px;
-        }
+    font-family:monospace;
 
-        .analyst{
-            color:#66b3ff;
-        }
+    margin-bottom:60px;
+}
 
-        .challenger{
-            color:#ff6666;
-        }
+.interface-container{
+    text-align:center;
+}
 
-        .synth{
-            color:#00ff88;
-        }
+.interface-container img{
+    width:85%;
+    max-width:1100px;
 
-        .specs{
-            background:black;
-            border:1px solid rgba(0,255,136,0.18);
-            border-radius:18px;
-            padding:35px;
-            font-family:monospace;
-            color:var(--primary);
-            line-height:2;
-        }
+    border-radius:18px;
 
-        footer{
-            padding:70px 7%;
-            border-top:1px solid rgba(0,255,136,0.08);
-            background:#04070b;
-        }
+    border:1px solid rgba(255,255,255,0.08);
 
-        .footer-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-            gap:40px;
-        }
+    box-shadow:0 20px 80px rgba(0,0,0,0.45);
+}
 
-        footer h4{
-            color:var(--primary);
-            margin-bottom:20px;
-            letter-spacing:2px;
-        }
+.video-container{
+    text-align:center;
+}
 
-        footer p,
-        footer li,
-        footer a{
-            color:var(--muted);
-            text-decoration:none;
-            list-style:none;
-            line-height:2;
-        }
+.video-container video{
+    width:90%;
+    max-width:1100px;
 
-        footer a:hover{
-            color:var(--primary);
-        }
+    border-radius:20px;
 
-        .footer-bottom{
-            margin-top:50px;
-            padding-top:20px;
-            border-top:1px solid rgba(255,255,255,0.06);
-            text-align:center;
-            color:#566273;
-            font-size:.75rem;
-        }
+    border:1px solid rgba(255,255,255,0.08);
 
-        @media(max-width:768px){
+    box-shadow:0 20px 80px rgba(0,0,0,0.45);
+}
 
-            .hero h1{
-                font-size:2.5rem;
-            }
+.grid{
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
 
-            .hero{
-                padding-top:70px;
-            }
+.card{
+    flex:1;
+    min-width:320px;
+    max-width:550px;
 
-            nav{
-                flex-direction:column;
-                gap:18px;
-            }
+    background:var(--card);
 
-            .status-box{
-                text-align:center;
-            }
-        }
-    </style>
+    border-radius:20px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    box-shadow:0 15px 40px rgba(0,0,0,0.35);
+}
+
+.card video{
+    width:100%;
+    display:block;
+}
+
+.card-content{
+    padding:28px;
+}
+
+.card h3{
+    color:white;
+    margin-bottom:15px;
+    letter-spacing:1px;
+}
+
+.card p{
+    color:#9fb3d1;
+    line-height:1.8;
+}
+
+.capabilities{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:24px;
+}
+
+.capability-box{
+    background:var(--card);
+
+    padding:28px;
+
+    border-radius:18px;
+
+    border:1px solid rgba(255,255,255,0.05);
+}
+
+.capability-box h4{
+    margin-bottom:15px;
+    color:white;
+    letter-spacing:1px;
+}
+
+.capability-box p{
+    color:var(--muted);
+    line-height:1.7;
+}
+
+footer{
+    padding:70px 8%;
+
+    border-top:1px solid rgba(255,255,255,0.06);
+
+    text-align:center;
+}
+
+footer h3{
+    margin-bottom:20px;
+    letter-spacing:3px;
+}
+
+footer p{
+    color:var(--muted);
+    margin-bottom:15px;
+}
+
+footer a{
+    color:var(--primary);
+    text-decoration:none;
+}
+
+.footer-bottom{
+    margin-top:50px;
+    font-size:0.8rem;
+    color:#5d6a88;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2.4rem;
+}
+
+.hero p{
+    font-size:1rem;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
+
 <nav>
 
-    <a href="#" class="logo-wrap">
-        <img src="logo.png" alt="InsightPulse Logo">
-        <div class="logo-text">INSIGHTPULSE</div>
-    </a>
+<div class="nav-left">
 
-    <div class="status-box">
-        PROTOCOL: JADC2-EDGE / DUAL-MODE READY<br>
-        <span class="online-dot">● ONLINE + OFFLINE OPERATIONAL</span>
-    </div>
+<img src="logo.png" alt="InsightPulse Logo">
+
+<div class="nav-title">
+INSIGHTPULSE
+</div>
+
+</div>
+
+<div class="nav-status">
+
+PROTOCOL: DISCONNECTED OPS READY<br>
+<span style="color:#00ff88;">● OPERATIONAL</span>
+
+</div>
 
 </nav>
 
+<!-- HERO -->
+
 <section class="hero">
 
-    <h1>Strategic Decision Architecture</h1>
+<h1>
+TACTICAL AI FOR DISCONNECTED & HIGH-RISK ENVIRONMENTS
+</h1>
 
-    <p class="hero-sub">
-        [ AI-POWERED OPERATIONAL INTELLIGENCE FOR DISCONNECTED AND HIGH-STAKES ENVIRONMENTS ]
-    </p>
+<p>
 
-    <p class="hero-desc">
-        InsightPulse is an AI-powered intelligence system designed to unify internal and external information across online and offline environments. 
-        The platform enables operators to query survival manuals, tactical procedures, geospatial intelligence, operational documents, audio, video, 
-        and OSINT through natural language or voice interaction — transforming fragmented data into actionable intelligence in seconds.
-        <br><br>
-        Built for defense, emergency response, infrastructure resilience, and tactical field operations.
-    </p>
+InsightPulse is a portable AI intelligence system designed for mission-critical operations.  
+It unifies internal and external data sources — including PDFs, manuals, maps, audio, video and OSINT — enabling rapid consultation in both online secure facilities and disconnected field environments where information can mean survival.
 
-    <div class="hero-buttons">
-        <a href="#demo" class="btn-primary">WATCH DEMO</a>
-        <a href="https://www.linkedin.com/in/cesarzurita/" target="_blank" class="btn-secondary">CONTACT</a>
-    </div>
+</p>
+
+<div class="hero-buttons">
+
+<a href="#demo" class="btn-primary">
+WATCH DEMO
+</a>
+
+<a href="#capabilities" class="btn-secondary">
+EXPLORE CAPABILITIES
+</a>
+
+</div>
 
 </section>
+
+<!-- INTERFACE -->
+
+<section class="section">
+
+<div class="section-subtitle">
+[ LIVE OPERATIONAL INTERFACE ]
+</div>
+
+<div class="interface-container">
+
+<img src="interfaz.png" alt="InsightPulse Interface">
+
+</div>
+
+</section>
+
+<!-- MAIN DEMO -->
 
 <section class="section" id="demo">
 
-    <h2 class="section-title">
-        Primary Operational Interface
-    </h2>
+<h2 class="section-title">
+TACTICAL DEMONSTRATION
+</h2>
 
-    <p class="section-sub">
-        Portable AI decision-support architecture capable of operating in both secure connected environments and disconnected tactical scenarios.
-    </p>
+<p class="section-subtitle">
+Portable AI intelligence for disconnected and mission-critical environments.
+</p>
 
-    <img src="interfaz.png" alt="InsightPulse Interface" class="interface-image">
+<div class="video-container">
 
-    <p class="video-label">
-        [ OPERATIONAL DEMO — ONLINE / OFFLINE AI DECISION SUPPORT ]
-    </p>
+<video autoplay muted loop controls playsinline>
 
-    <div class="video-container">
+<source src="insightpulse_demo.mp4" type="video/mp4">
 
-        <iframe
-            src="https://www.youtube.com/embed/G3jecsJE-uU"
-            title="InsightPulse Tactical Demo"
-            allowfullscreen
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
-        </iframe>
+</video>
 
-    </div>
+</div>
 
 </section>
 
-<section class="section architecture">
-
-    <h2 class="section-title">
-        Triadic AI Architecture
-    </h2>
-
-    <p class="section-sub">
-        InsightPulse leverages a multi-agent AI structure engineered to reduce bias, challenge assumptions, and synthesize operationally useful recommendations.
-    </p>
-
-    <div class="triad">
-
-        <div class="triad-box">
-            <h4 class="analyst">[ ANALYST ]</h4>
-
-            <p>
-                Aggregates and processes multimodal information including GEOINT, OSINT, survival manuals,
-                field documentation, PDFs, audio transcripts, and operational datasets.
-            </p>
-        </div>
-
-        <div class="triad-box">
-            <h4 class="challenger">[ CHALLENGER ]</h4>
-
-            <p>
-                Stress-tests assumptions, identifies weaknesses, and performs adversarial validation to reduce cognitive bias
-                and operational blind spots.
-            </p>
-        </div>
-
-        <div class="triad-box">
-            <h4 class="synth">[ SYNTHESIZER ]</h4>
-
-            <p>
-                Produces actionable recommendations, route synthesis, risk assessment,
-                and confidence-scored operational outputs for human decision-makers.
-            </p>
-        </div>
-
-    </div>
-
-</section>
+<!-- MISSION SCENARIOS -->
 
 <section class="section">
 
-    <h2 class="section-title">
-        Operational Applications
-    </h2>
+<h2 class="section-title">
+MISSION SCENARIOS
+</h2>
 
-    <div class="grid">
+<p class="section-subtitle">
+Designed for degraded, disconnected and operationally critical environments.
+</p>
 
-        <div class="card">
-            <h3>Defense & Tactical Operations</h3>
+<div class="grid">
 
-            <p>
-                AI-assisted survival intelligence, denied-environment navigation, extraction planning,
-                tactical decision support, and autonomous offline field assistance.
-            </p>
-        </div>
+<!-- CARD 1 -->
 
-        <div class="card">
-            <h3>Disaster Response</h3>
+<div class="card">
 
-            <p>
-                Portable AI knowledge systems for earthquakes, hurricanes, wildfires,
-                humanitarian crises, and collapsed communications infrastructure.
-            </p>
-        </div>
+<video autoplay muted loop playsinline>
 
-        <div class="card">
-            <h3>Critical Infrastructure</h3>
+<source src="rescue_scenario.mp4" type="video/mp4">
 
-            <p>
-                Operational intelligence for energy, logistics, industrial security,
-                offshore assets, and infrastructure resilience.
-            </p>
-        </div>
+</video>
 
-    </div>
+<div class="card-content">
+
+<h3>
+Mountain Rescue Operations
+</h3>
+
+<p>
+Offline AI assistance for rescue teams operating in isolated and low-connectivity environments. Query survival manuals, operational maps and emergency procedures instantly.
+</p>
+
+</div>
+
+</div>
+
+<!-- CARD 2 -->
+
+<div class="card">
+
+<video autoplay muted loop playsinline>
+
+<source src="disaster_response.mp4" type="video/mp4">
+
+</video>
+
+<div class="card-content">
+
+<h3>
+Disaster Response
+</h3>
+
+<p>
+Portable intelligence for emergency response, field coordination and crisis management in environments where cloud connectivity cannot be guaranteed.
+</p>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
-<section class="section">
+<!-- CAPABILITIES -->
 
-    <h2 class="section-title">
-        Technical Architecture
-    </h2>
+<section class="section" id="capabilities">
 
-    <div class="specs">
+<h2 class="section-title">
+CORE CAPABILITIES
+</h2>
 
-        > CORE_ENGINE: Triadic Deliberation Architecture V1.1<br>
-        > DEPLOYMENT: Cloud / Edge / Offline Portable Ready<br>
-        > INPUTS: PDF, DOCX, XLSX, Audio, GEOINT, OSINT, Video<br>
-        > AI_STACK: Multi-Agent LLM Architecture<br>
-        > INTERACTION: Natural Language + Voice Query Support<br>
-        > OPERATIONAL_MODE: Online + Disconnected Environments<br>
-        > PLATFORM: Laptop / Tactical Portable Devices<br>
-        > HUMAN_AUTHORITY: Human-in-the-loop Decision Framework
+<p class="section-subtitle">
+Operational AI architecture built for resilience and rapid decision-making.
+</p>
 
-    </div>
+<div class="capabilities">
+
+<div class="capability-box">
+
+<h4>
+Offline & Online Operations
+</h4>
+
+<p>
+Operates both in connected facilities and fully disconnected field environments using portable AI deployment architectures.
+</p>
+
+</div>
+
+<div class="capability-box">
+
+<h4>
+Multi-Source Intelligence
+</h4>
+
+<p>
+Integrates PDFs, Word, Excel, audio, video, maps, survival manuals and external OSINT into a unified queryable system.
+</p>
+
+</div>
+
+<div class="capability-box">
+
+<h4>
+Triadic AI Deliberation
+</h4>
+
+<p>
+Structured reasoning architecture using Analyst, Challenger and Synthesizer AI layers to reduce bias and improve reliability.
+</p>
+
+</div>
+
+<div class="capability-box">
+
+<h4>
+Portable Tactical Deployment
+</h4>
+
+<p>
+Designed for rugged laptops, tablets and deployable edge systems in austere operational conditions.
+</p>
+
+</div>
+
+</div>
 
 </section>
+
+<!-- FOOTER -->
 
 <footer>
 
-    <div class="footer-grid">
+<h3>
+ESTABLISH CONTACT
+</h3>
 
-        <div>
+<p>
+Defense Innovation • Disaster Response • Tactical AI • Operational Resilience
+</p>
 
-            <h4>[ ENCRYPTED COMMS ]</h4>
+<p>
+EMAIL:
+<a href="mailto:cesar@insightpulse.pro">
+cesar@insightpulse.pro
+</a>
+</p>
 
-            <p>
-                Direct contact channel for defense accelerators, strategic partners,
-                emergency response organizations, and operational validation opportunities.
-            </p>
+<p>
+LINKEDIN:
+<a href="https://www.linkedin.com/in/cesarzurita/" target="_blank">
+Operator Profile
+</a>
+</p>
 
-        </div>
+<div class="footer-bottom">
 
-        <div>
+© 2026 InsightPulse Strategic Intelligence
 
-            <h4>[ CONTACT ]</h4>
-
-            <ul>
-                <li>Email: <a href="mailto:cesar@insightpulse.pro">cesar@insightpulse.pro</a></li>
-                <li>LinkedIn: <a href="https://www.linkedin.com/in/cesarzurita/" target="_blank">Operator Profile</a></li>
-            </ul>
-
-        </div>
-
-        <div>
-
-            <h4>[ STATUS ]</h4>
-
-            <p>
-                MVP Stage<br>
-                Tactical Demo Operational<br>
-                Seeking Pilot Validation & Strategic Partnerships
-            </p>
-
-        </div>
-
-    </div>
-
-    <div class="footer-bottom">
-        © 2026 INSIGHTPULSE STRATEGIC INTELLIGENCE — ALL RIGHTS RESERVED
-    </div>
+</div>
 
 </footer>
 
